@@ -1,0 +1,46 @@
+Theory
+Problem Statement:
+You are given a binary array nums, consisting of only 0s and 1s. The task is to find the maximum number of consecutive 1s in the array.
+
+Approach:
+
+We will iterate through the array and keep a running count (sum) of consecutive 1s.
+Whenever we encounter a 0 or reach the end of the array, we check if the current count of consecutive 1s is the largest we have seen so far.
+We reset the count whenever a 0 is encountered and continue counting consecutive 1s.
+The result will be the maximum consecutive 1s encountered during the entire traversal.
+Algorithm:
+
+Initialize sum to 0 (this will keep track of the current number of consecutive 1s).
+Initialize ans to 0 (this will store the maximum number of consecutive 1s).
+Iterate through the array:
+If the current element is 1, increment sum.
+If the current element is 0 or we are at the last element, update ans to the maximum of ans and sum, and reset sum to 0.
+After the loop, ans will contain the maximum number of consecutive 1s.
+Complexity:
+
+Time Complexity: 
+𝑂(𝑛)
+O(n), where 
+𝑛
+n is the size of the array. We only traverse the array once.
+Space Complexity: 
+𝑂(1)
+O(1), since we only use a few extra variables.
+
+Algorithm Explanation
+Initialization:
+
+sum = 0: This variable will track the current count of consecutive 1s.
+ans = 0: This variable stores the maximum count of consecutive 1s found during the iteration.
+n = nums.size(): The size of the array is stored to control the loop.
+Iterating through the array:
+
+We iterate through each element of the array using a for loop.
+If nums[i] is 1, we increment sum (since it's part of the current streak of 1s).
+If nums[i] is 0 or if i == n - 1 (indicating we are at the last element of the array), we:
+Update ans to the maximum value between ans and sum, since we might have found a longer streak of 1s.
+Reset sum to 0 as we can't continue counting consecutive 1s after encountering 0.
+Returning the result:
+
+After the loop finishes, the variable ans will contain the maximum number of consecutive 1s that we encountered.
+
